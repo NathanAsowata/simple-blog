@@ -1,13 +1,14 @@
 import Link from "next/link"
+import styles from "../styles/Navbar.module.scss"
 
 const Navbar = () => {
   return (
-    <nav>
+    <nav className={styles.nav}>
         <Link href={"/"}>
-            <h1>Simple Blog</h1>
+            <h1 className={styles.logo}>Simple Blog</h1>
         </Link>
         <Link href={"/newpost"}>
-            <button>Add New Post</button>
+            <button className={styles.button}>Add New Post</button>
         </Link>
     </nav>
   )
