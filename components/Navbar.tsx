@@ -6,7 +6,9 @@ const Navbar = () => {
         <Link href={"/"}>
             <h1>Simple Blog</h1>
         </Link>
-        <button>Add New Post</button>
+        <Link href={"/newpost"}>
+            <button>Add New Post</button>
+        </Link>
     </nav>
   )
 }
