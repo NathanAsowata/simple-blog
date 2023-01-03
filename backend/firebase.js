@@ -17,3 +17,5 @@ const app = initializeApp(firebaseConfig);
 
 // Initialize Cloud Firestore
 const db = getFirestore(app)
+
+export default db;
