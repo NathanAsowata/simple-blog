@@ -40,7 +40,7 @@ const NewPost = () => {
     <h1>Add a new blog post</h1>  
     
     {/* This notifies the user that the blog post has been uploaded successfully */}
-    {isVisible && <div>
+    {isVisible && <div className={styles.notification}>
       <span>{message}</span>
       <button onClick={() => setIsVisible(false)}>Close</button>
     </div> }

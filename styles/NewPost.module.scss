@@ -23,5 +23,22 @@
         border: none;
         font-size: 16px;
         box-shadow: 2px 2px 4px black;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+.notification{
+    background-color: black;
+    color: white;
+    box-shadow: 2px 2px 5px black;
+    padding: 10px;
+    margin-bottom: 15px;
+    button{
+        background-color: white;
+        border: none;
+        font-size: 14px;
+        padding: 5px;
+        margin-left: 10px;
     }
 }
