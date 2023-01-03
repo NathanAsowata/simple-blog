@@ -7,7 +7,7 @@ const NewPost = () => {
 
   return (
     <>
-    <h1>Add a new blog</h1>
+    <h1>Add a new blog post</h1>
     <form>
       <label htmlFor="title">Title</label><br />
       <input 
