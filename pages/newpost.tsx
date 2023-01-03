@@ -1,6 +1,7 @@
 import { FormEvent, useState } from "react"
 import db from "../backend/firebase"
 import { collection, addDoc } from "firebase/firestore";
+import styles from "../styles/NewPost.module.scss"
 
 
 const NewPost = () => {
@@ -34,7 +35,7 @@ const NewPost = () => {
   }
 
   return (
-    <>
+    <main className={styles.container}>
     {/* The page title */}
     <h1>Add a new blog post</h1>  
     
@@ -45,7 +46,7 @@ const NewPost = () => {
     </div> }
 
     {/* This form receives the user inputs */}
-    <form onSubmit={addNewPost}>
+    <form onSubmit={addNewPost} className={styles.form}>
   
       {/* This section accepts blog post title */}
       <label htmlFor="title">Title</label><br />
@@ -60,6 +61,8 @@ const NewPost = () => {
       <label htmlFor="content">Content</label><br />
       <textarea 
         name="content"
+        cols={30}
+        rows={10}
         value={content}
         onChange={(e) => setContent(e.target.value)}
       ></textarea><br />
@@ -67,7 +70,7 @@ const NewPost = () => {
       {/* The submit button */}
       <button type="submit">Submit</button>
     </form>
-    </>
+    </main>
   )
 }
 
