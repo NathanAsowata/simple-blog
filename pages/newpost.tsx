@@ -48,7 +48,7 @@ const NewPost = () => {
     {/* This form receives the user inputs */}
     <form onSubmit={addNewPost} className={styles.form}>
   
-      {/* This section accepts blog post title */}
+      {/* This section accepts the blog post title */}
       <label htmlFor="title">Title</label><br />
       <input 
         type="text" 
@@ -57,7 +57,7 @@ const NewPost = () => {
         onChange={(e)=> setTitle(e.target.value)}
       /><br />
 
-      {/* This section accepts blog post content */}
+      {/* This section accepts the blog post content */}
       <label htmlFor="content">Content</label><br />
       <textarea 
         name="content"

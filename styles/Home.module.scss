@@ -1,0 +1,27 @@
+.blogFeed{
+    list-style-type: none;
+    display: grid;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+.post{
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    max-width: 600px;
+    border-radius: 9px;
+    box-shadow: 3px 3px 7px black;
+    button{
+        background-color: white;
+        color: red;
+        border: 1px solid red;
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 14px;
+        &:hover{
+            background-color: red;
+            color: white;
+        }
+    }
+}
