@@ -1,6 +1,7 @@
 import { useState, useEffect} from "react"
 import { collection, getDocs} from "firebase/firestore"
 import db from "../backend/firebase"
+import styles from "../styles/Home.module.scss"
 
 
 interface Document {
@@ -33,9 +34,10 @@ const Home = () => {
   }, [])
 
   return(
-    <ul>
+    <ul className={styles.blogFeed}>
       {documents.map((doc, id) => {
-        return <li key={id}>
+        return <li key={id} className={styles.post}>
+                  <button>Delete</button>
                   <h4>{doc.title}</h4>
                   <p>{doc.content}</p>
                 </li>
