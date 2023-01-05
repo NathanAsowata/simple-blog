@@ -1,12 +1,13 @@
 import { useState, useEffect} from "react"
-import { collection, getDocs} from "firebase/firestore"
+import { collection, getDocs, doc, deleteDoc} from "firebase/firestore"
 import db from "../backend/firebase"
 import styles from "../styles/Home.module.scss"
 
 
 interface Document {
-  content: String,
-  title: String
+  id: string,
+  content: string,
+  title: string
 }
 
 const Home = () => {
@@ -27,7 +28,7 @@ const Home = () => {
       
       // The data is then  mapped to extract the blog posts and insert them in to an array
       data.docs.map(doc => {
-        fetchDocuments.push(doc.data() as Document)   
+        fetchDocuments.push({id: doc.id, content: doc.data().content, title: doc.data().title} as Document)  
       })
       
       // This sets the fetchDocuments as the new value for the document state
@@ -39,13 +40,19 @@ const Home = () => {
     
   }, [])
 
+  const deletePost = async (id: string) => {
+      await deleteDoc(doc(db, "posts", id))
+      window.location.reload()
+  }
+
+
   return(
     <ul className={styles.blogFeed}>
       
       {documents.map((doc, id) => {
         
         return <li key={id} className={styles.post}>
-                  <button>Delete</button>
+                  <button onClick={()=> deletePost(doc.id)}>Delete</button>
                   <h4>{doc.title}</h4>
                   <p>{doc.content}</p>
                 </li>
